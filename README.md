@@ -1,6 +1,6 @@
 <h1>ExpNo 2 : Implement Depth First Search Traversal of a Graph</h1> 
-<h3>Name: </h3>
-<h3>Register Number:     </h3>
+<h3>Name: Manisha M </h3> 
+<h3>Register Number:  212224220061   </h3>
 <H3>Aim:</H3>
 <p> To Implement Depth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -87,6 +87,45 @@ F H <BR>
 <h3>Sample Output</h3>
 <hr>
 ['0', '1', '2', '3', '4']
+
+# PROGRAM 
+```
+graph = {}
+
+data = input().split()
+n = int(data[0])
+e = int(data[1])
+
+for i in range(e):
+    u = data[2 + i * 2]
+    v = data[3 + i * 2]
+
+    if u not in graph:
+        graph[u] = []
+    if v not in graph:
+        graph[v] = []
+
+    graph[u].append(v)
+    graph[v].append(u)
+
+start = data[2 + e * 2]
+visited = []
+
+def dfs(node):
+    visited.append(node)
+
+    for neighbour in graph[node]:
+        if neighbour not in visited:
+            dfs(neighbour)
+
+dfs(start)
+
+print("Depth First Search:")
+print(visited)
+```
+# OUTPUT 
+<img width="543" height="140" alt="682374865-e5d34c36-151d-4836-8e6d-a7b14058e172" src="https://github.com/user-attachments/assets/2ba6678f-918b-41e6-9fe5-681dad1c8a2c" />
+
 
 <hr>
 <h3>Result:</h3>
